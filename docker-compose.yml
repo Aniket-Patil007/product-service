@@ -1,0 +1,15 @@
+version: '4.0'
+
+services:
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"  # Expose MongoDB port
+    volumes:
+      - ./data:/data/db  # Mount a volume for persistent storage
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root  # Root username
+      - MONGO_INITDB_ROOT_PASSWORD=password  # Root password
+	  	  
